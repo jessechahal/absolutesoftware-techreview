@@ -2,6 +2,7 @@
 version: '3'
 services:
   absolute_api:
+    # real image reference would be similar to below for better configurability
     #image: "${DOCKERHUB_SERVER}/${ABSOLUTE_API_IMAGE}:${ABSOLUTE_API_VERSION}"
     build: ./absolute_api
     restart: always
