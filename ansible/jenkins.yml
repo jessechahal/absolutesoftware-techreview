@@ -1,0 +1,10 @@
+---
+- hosts: jenkins
+  user: root
+  vars:
+    jenkins_hostname: jenkins.absolute.com
+  roles:
+   - role: geerlingguy.java
+     become: yes
+   - role: geerlingguy.jenkins
+     become: yes
