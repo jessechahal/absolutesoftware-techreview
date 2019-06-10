@@ -2,30 +2,11 @@
 version: '3'
 services:
   absolute_api:
-    image: "${DOCKERHUB_SERVER}/${ABSOLUTE_API_IMAGE}:${ABSOLUTE_API_VERSION}"
+    #image: "${DOCKERHUB_SERVER}/${ABSOLUTE_API_IMAGE}:${ABSOLUTE_API_VERSION}"
+    build: ./absolute_api
     restart: always
     ports:
      - "5000:5000"
-    networks:
-      internalNet:
-        aliases:
-          - absolute.api.service
     volumes:
     # config should be externalized from docker image.
      - ./absolute_api.properties:/absolute_api.properties:ro
-
-networks:
-  default:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-      - subnet: 172.19.0.0/24
-        gateway: 172.19.0.1
-  internalNet:
-    driver: overlay
-    ipam:
-      driver: default
-      config:
-      - subnet: 10.0.0.0/24
-        gateway: 10.0.0.1
