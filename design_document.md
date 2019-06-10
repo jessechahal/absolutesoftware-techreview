@@ -11,7 +11,7 @@ The basics of how this system will run
         - there will be a jenkins lock/mutex on the environment to make sure other jobs don't update at the same time
     1. A job to update our new kubernetes cluster with the latest absolute_api docker image 
     1. A job to perform integration testing against this kubernetes environment
-1. All of the jenkins jobs will be setup so 
+1. All of the jenkins jobs will be setup so they are downstream from eachother. Essentially when one completes successfully it will trigger the next job
 
 Jenkins notes
 - we will be using jenkins groovy scripting plugin to make sure each repo is responsible for configuring their own jenkins job in code.
