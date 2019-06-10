@@ -1,0 +1,9 @@
+---
+- hosts: kubernetes
+
+  vars:
+    kubernetes_allow_pods_on_master: True
+
+  roles:
+    - geerlingguy.docker
+    - geerlingguy.kubernetes
