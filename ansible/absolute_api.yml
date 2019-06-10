@@ -1,2 +1,3 @@
 ---
 #playbook to launch & update absolute_api service
+#deploys docker image absolute_api:<some_version> to kubernetes cluster

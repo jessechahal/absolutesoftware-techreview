@@ -1,4 +1,5 @@
 ---
 # file: site.yml
 - import_playbook: jenkins.yml
+- import_playbook: kubernetes.yml
 - import_playbook: absolute_api.yml
